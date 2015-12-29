@@ -1,0 +1,33 @@
+#include "mutual.h"
+
+int input = -1;
+int output = -1;
+bool listen = true;
+int nb = 0;
+char **requests = NULL;
+
+bool isFileExisting(const char *);
+int atis(char *);
+void createFifos(void);
+void openFifos(void);
+void operations(void);
+
+bool isFileExisting(const char * pathName){
+	struct stat         info;
+    return (stat(pathname, &info) == 0);
+}
+
+int atis(char * atisMsg){
+	int fichierMeteo = 0;
+	int atisSize = 0;
+	char buf[100];
+	fichierMeteo = open(FICHIERMETEO, O_RDONLY);
+	if(fichierMeteo == -1){
+		printf("Impossible d'ouvrir le fichier météo.\n");
+		memcpy(atisMsg, );
+	}
+}
+
+int main(){
+	return atis();
+}
